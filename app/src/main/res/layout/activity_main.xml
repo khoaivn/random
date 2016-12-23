@@ -13,23 +13,37 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/height"
         android:id="@+id/from"
         android:hint="from"
-        android:inputType="number"/>
+        android:inputType="number"
+        android:textSize="30sp"
+        android:fontFamily="monospace"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textAlignment="center" />
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/height"
         android:id="@+id/to"
         android:hint="to"
-        android:inputType="number"/>
+        android:inputType="number"
+        android:textSize="30sp"
+        android:fontFamily="monospace"
+        android:textColor="?attr/colorAccent"
+        android:textAlignment="center"/>
     <Button
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/height"
         android:id="@+id/bt_result"
-        android:text="result" />
+        android:text="result"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimary" />
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:id="@+id/tv_result" />
+        android:layout_height="@dimen/height"
+        android:id="@+id/tv_result"
+        android:textSize="30sp"
+        android:fontFamily="monospace"
+        android:textColor="?attr/colorAccent"
+        android:textAlignment="center"/>
 </LinearLayout>

@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -23,12 +24,17 @@ public class MainActivity extends AppCompatActivity {
         bt.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                tv.setText("");
                 String from = et_from.getText().toString();
                 String to = et_to.getText().toString();
                 int min = Integer.parseInt(from);
                 int max = Integer.parseInt(to);
-                int u = rand.nextInt((max - min) + 1) + min;
-                tv.setText(String.valueOf(u));
+                if (min > max)
+                    Toast.makeText( MainActivity.this, "error!", Toast.LENGTH_LONG).show();
+                else {
+                    int u = rand.nextInt((max - min) + 1) + min;
+                    tv.setText(String.valueOf(u));
+                }
             }
         });
 
