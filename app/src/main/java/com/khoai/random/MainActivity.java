@@ -1,4 +1,4 @@
-package com.com.random;
+package com.khoai.random;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
