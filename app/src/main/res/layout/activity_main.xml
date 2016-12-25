@@ -1,49 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.com.random.MainActivity"
-    android:orientation="vertical">
+    android:layout_width="match_parent">
 
-    <EditText
+    <LinearLayout
+        android:id="@+id/activity_main"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height"
-        android:id="@+id/from"
-        android:hint="from"
-        android:inputType="number"
-        android:textSize="30sp"
-        android:fontFamily="monospace"
-        android:textColor="@android:color/holo_blue_bright"
-        android:textAlignment="center" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/height"
-        android:id="@+id/to"
-        android:hint="to"
-        android:inputType="number"
-        android:textSize="30sp"
-        android:fontFamily="monospace"
-        android:textColor="?attr/colorAccent"
-        android:textAlignment="center"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/height"
-        android:id="@+id/bt_result"
-        android:text="result"
-        android:textSize="24sp"
-        android:textColor="@color/colorPrimary" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/height"
-        android:id="@+id/tv_result"
-        android:textSize="30sp"
-        android:fontFamily="monospace"
-        android:textColor="?attr/colorAccent"
-        android:textAlignment="center"/>
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:weightSum="20"
+        tools:context="com.khoai.random.MainActivity"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:id="@+id/from"
+            android:hint="from"
+            android:inputType="number"
+            android:textSize="30sp"
+            android:fontFamily="monospace"
+            android:textColor="@android:color/holo_blue_bright"
+            android:textAlignment="center" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:id="@+id/to"
+            android:hint="to"
+            android:inputType="number"
+            android:textSize="30sp"
+            android:fontFamily="monospace"
+            android:textColor="?attr/colorAccent"
+            android:textAlignment="center"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:id="@+id/bt_result"
+            android:text="result"
+            android:textSize="24sp"
+            android:textColor="@color/colorPrimary" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:id="@+id/tv_result"
+            android:textSize="30sp"
+            android:fontFamily="monospace"
+            android:textColor="?attr/colorAccent"
+            android:textAlignment="center"/>
+    </LinearLayout>
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true">
+    </com.google.android.gms.ads.AdView>
+</RelativeLayout>
