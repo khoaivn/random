@@ -31,9 +31,24 @@ public class MainActivity extends AppCompatActivity {
                 tv.setText("");
                 String from = et_from.getText().toString();
                 String to = et_to.getText().toString();
-                int min = Integer.parseInt(from);
-                int max = Integer.parseInt(to);
-                if (min > max)
+                int min;
+                boolean check = true;
+                try {
+                    min = Integer.parseInt(from);
+                } catch (NumberFormatException e) {
+                    min = 0;
+                    check = false;
+                }
+                int max;
+                try {
+                    max = Integer.parseInt(to);
+                } catch (NumberFormatException e) {
+                    max = 0;
+                    check = false;
+                }
+                if (!check)
+                    Toast.makeText( MainActivity.this, "Number too large!", Toast.LENGTH_LONG).show();
+                else if (min > max)
                     Toast.makeText( MainActivity.this, "error!", Toast.LENGTH_LONG).show();
                 else {
                     int u = rand.nextInt((max - min) + 1) + min;
